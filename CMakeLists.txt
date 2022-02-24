@@ -30,7 +30,7 @@ target_include_directories(dynamic_weights_conv2d_trt_plugin PUBLIC include ${TR
 target_link_libraries(dynamic_weights_conv2d_trt_plugin PUBLIC ${CUDNN_LIB} CUDA::cudart ${TRT_LIBS})
 
 
-add_executable(main.cpp)
+add_executable(main main.cpp)
 target_include_directories(main PUBLIC include /usr/local/cuda/include ${TRT_INCLUDE_DIR} )
 target_link_libraries(main PUBLIC dynamic_weights_conv2d_trt_plugin ${TRT_LIBS})
 set_target_properties(main PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
